@@ -42,7 +42,23 @@ public class ChatModel
 	 */
 	public boolean lengthChecker(String currentInput)
 	{
-		return false;
+		boolean hasLength = false;
+		
+		if(currentInput != null)
+		{
+			if(currentInput.length() != 1)
+			{
+				hasLength = true;
+			}
+		}
+		
+		//Alternate method if statement: compound if
+		
+		if(currentInput != null && currentInput.length() > 0)
+		{
+			hasLength = true;
+		}
+		return hasLength;
 	}
 	
 	/**
@@ -52,6 +68,7 @@ public class ChatModel
 	 */
 	public boolean contentChecker(String currentInput)
 	{
+		
 		return false;
 	}
 	
@@ -83,7 +100,7 @@ public class ChatModel
 				hasMeme = true;
 			}
 		}
-		return false;
+		return hasMeme;
 	}
 	
 	/**
