@@ -21,6 +21,13 @@ public class ChatModel
 	 */
 	public ChatModel(String userName)
 	{
+		this.memesList = new ArrayList<String>();
+		this.politicalTopicList = new ArrayList<String>();
+		this.userName = userName;
+		this.content = "Szechwan";
+		
+		buildMemesList();
+		buildPoliticalTopicsList();
 		
 	}
 	
@@ -103,13 +110,21 @@ public class ChatModel
 		return hasMeme;
 	}
 	
+	public String processConversation(String currentInput)
+	{
+		String results = "";
+		
+		
+		
+		return results;
+	}
 	/**
 	 * Returns the username of this Chatbot instance.
 	 * @return The username of the Chatbot.
 	 */
 	public String getUserName()
 	{
-		return null;
+		return userName;
 	}
 	
 	/**
@@ -118,7 +133,7 @@ public class ChatModel
 	 */
 	public String getContent()
 	{
-		return null;
+		return content;
 	}
 	
 	/**
