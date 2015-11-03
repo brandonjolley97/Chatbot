@@ -24,7 +24,7 @@ public class ChatModel
 		this.memesList = new ArrayList<String>();
 		this.politicalTopicList = new ArrayList<String>();
 		this.userName = userName;
-		this.content = "Szechwan";
+		this.content = "Mexican";
 		
 		buildMemesList();
 		buildPoliticalTopicsList();
@@ -33,12 +33,13 @@ public class ChatModel
 	
 	private void buildMemesList()
 	{
+		this.memesList.add("Doge");
 		
 	}
 	
 	private void buildPoliticalTopicsList()
 	{
-		
+		this.politicalTopicList.add("Trump");
 	}
 	
 	/**
@@ -92,10 +93,12 @@ public class ChatModel
 	public boolean politicalTopicChecker(String currentInput)
 	{
 		boolean hasPoliticalTopic = false;
-		if(currentInput.contains(politicalTopicList))
-		{
-			hasPoliticalTopic = true;
-		}
+		
+			if(politicalTopicList.contains(currentInput))
+			{
+				hasPoliticalTopic = true;
+			}
+		
 		
 		return hasPoliticalTopic;
 	}
