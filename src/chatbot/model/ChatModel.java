@@ -112,11 +112,45 @@ public class ChatModel
 	
 	public String processConversation(String currentInput)
 	{
-		String results = "";
+		String nextConversation = "";
+		int randomTopic = (int) (Math.random() * 5); //Generates a random number between 0 and 4.  The *5 gives it a range.
+		
+		switch (randomTopic)
+		{
+			case 0:
+				if(memeChecker(currentInput))
+				{
+					nextConversation = "That is a very popular meme this year.  What else are you wanting to talk about?";
+				}
+				break;
+			case 1:
+				if(politicalTopicChecker(currentInput))
+				{
+					nextConversation = "some words and a question";
+				}
+				break;
+			case 2:
+				if(contentChecker(currentInput))
+				{
+					nextConversation = "some words and a question";
+				}
+				break;
+			case 3:
+				if(currentInput.length() > 20)
+				{
+					nextConversation = "some words and a question";
+				}
+				break;
+			case 4:
+				nextConversation = "some words and a question";
+				break;
+			default:
+				nextConversation = "The universe just collapsed.....";
+				break;
+		}			
 		
 		
-		
-		return results;
+		return nextConversation;
 	}
 	/**
 	 * Returns the username of this Chatbot instance.
