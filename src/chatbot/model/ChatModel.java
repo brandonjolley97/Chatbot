@@ -75,8 +75,15 @@ public class ChatModel
 	 */
 	public boolean contentChecker(String currentInput)
 	{
-		
-		return false;
+		boolean hasContent = false;
+		if()
+		{
+			if( )
+			{
+				hasContent = true;
+			}
+		}
+		return hasContent;
 	}
 	
 	/**

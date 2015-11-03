@@ -49,7 +49,7 @@ public class ChatController
 	private void shutDown()
 	{
 		
-		
+		display.displayText("Goodbye")
 
 		
 		
