@@ -91,7 +91,13 @@ public class ChatModel
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
-		return false;
+		boolean hasPoliticalTopic = false;
+		if(currentInput.contains(politicalTopicList))
+		{
+			hasPoliticalTopic = true;
+		}
+		
+		return hasPoliticalTopic;
 	}
 	
 	
