@@ -34,12 +34,16 @@ public class ChatModel
 	private void buildMemesList()
 	{
 		this.memesList.add("Doge");
+		this.memesList.add("Y U NO!");
+		this.memesList.add("Bad luck Brian");
 		
 	}
 	
 	private void buildPoliticalTopicsList()
 	{
-		this.politicalTopicList.add("Trump");
+		this.politicalTopicList.add("Donald Trump");
+		this.politicalTopicList.add("Hillary Clinton");
+		this.politicalTopicList.add("Presidential election");
 	}
 	
 	/**
@@ -60,7 +64,7 @@ public class ChatModel
 			}
 		}
 		
-		//Alternate method if statement: compound if
+		//Alternate method if statement: compound if that utilizes &&
 		
 		if(currentInput != null && currentInput.length() > 0)
 		{
@@ -123,6 +127,7 @@ public class ChatModel
 		return hasMeme;
 	}
 	
+	
 	public String processConversation(String currentInput)
 	{
 		String nextConversation = "";
@@ -139,23 +144,23 @@ public class ChatModel
 			case 1:
 				if(politicalTopicChecker(currentInput))
 				{
-					nextConversation = "some words and a question";
+					nextConversation = "Trump is an interesting candidate, and so is Hillary Clinton....  But I can't vote.";
 				}
 				break;
 			case 2:
 				if(contentChecker(currentInput))
 				{
-					nextConversation = "some words and a question";
+					nextConversation = "I love Mexican food too!  Let's go get some sometime.  What else would you like to talk about?";
 				}
 				break;
 			case 3:
 				if(currentInput.length() > 20)
 				{
-					nextConversation = "some words and a question";
+					nextConversation = "What do you mean by that?  Try to simplify your question or statement.";
 				}
 				break;
 			case 4:
-				nextConversation = "some words and a question";
+				nextConversation = "Why don't we go to a different topic?  I feel uncomfortable discussing that...";
 				break;
 			default:
 				nextConversation = "The universe just collapsed.....";
@@ -169,6 +174,7 @@ public class ChatModel
 	 * Returns the username of this Chatbot instance.
 	 * @return The username of the Chatbot.
 	 */
+	
 	public String getUserName()
 	{
 		return userName;
@@ -189,7 +195,7 @@ public class ChatModel
 	 */
 	public ArrayList<String> getMemesList()
 	{
-		return null;
+		return memesList;
 	}
 	
 	/**
@@ -198,7 +204,7 @@ public class ChatModel
 	 */
 	public ArrayList<String> getPoliticalTopicList()
 	{
-		return null;
+		return politicalTopicList;
 	}
 	
 	/**
@@ -207,6 +213,31 @@ public class ChatModel
 	 */
 	public void setContent(String content)
 	{
-		
+		this.content = content;
 	}
+	
+	public void setMemesList(ArrayList <String> memesList)
+	{
+		this.memesList = memesList;
+	}
+	
+	public void setPoliticalTopicList(ArrayList <String> politicalTopicList)
+	{
+		this.politicalTopicList = politicalTopicList;
+	}
+	
+	public void setUserName(String userName)
+	{
+		this.userName = userName;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
