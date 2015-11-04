@@ -144,7 +144,7 @@ public class ChatModel
 			case 1:
 				if(politicalTopicChecker(currentInput))
 				{
-					nextConversation = "Trump is an interesting candidate, and so is Hillary Clinton....  But I can't vote.";
+					nextConversation = "Trump is an interesting candidate, and so is Hillary Clinton....  But I'm not human, so I can't vote.";
 				}
 				break;
 			case 2:
