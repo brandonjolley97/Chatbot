@@ -29,11 +29,11 @@ public class ChatController
 	
 	public void chat()
 	{
-		String conversation = display.grabInput("What would you like to talk about today?");
-		while(simpleBot.lengthChecker(conversation))
+		String nextConversation = display.grabInput("What would you like to talk about today?");
+		while(simpleBot.lengthChecker(nextConversation))
 		{
-			conversation = simpleBot.processConversation(conversation);
-			conversation = display.grabInput(conversation);
+			nextConversation = simpleBot.processConversation(nextConversation);
+			nextConversation = display.grabInput(nextConversation);
 		}
 	}
 	
