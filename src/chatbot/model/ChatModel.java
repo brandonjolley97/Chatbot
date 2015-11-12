@@ -41,9 +41,20 @@ public class ChatModel
 	
 	private void buildPoliticalTopicsList()
 	{
-		this.politicalTopicList.add("Donald Trump");
-		this.politicalTopicList.add("Hillary Clinton");
-		this.politicalTopicList.add("Presidential election");
+		this.politicalTopicList.add("Trump");
+		this.politicalTopicList.add("Clinton");
+		this.politicalTopicList.add("Biden");
+		this.politicalTopicList.add("Carson");
+		this.politicalTopicList.add("Rubio");
+		this.politicalTopicList.add("Fiorina");
+		this.politicalTopicList.add("Sanders");
+		this.politicalTopicList.add("vote");
+		this.politicalTopicList.add("11/8/2016");
+		this.politicalTopicList.add("democrat");
+		this.politicalTopicList.add("republican");
+		this.politicalTopicList.add("liberal");
+		this.politicalTopicList.add("conservative");
+		this.politicalTopicList.add("election");
 	}
 	
 	/**
