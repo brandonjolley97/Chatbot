@@ -1,6 +1,7 @@
 package chatbot.model;
 
 import java.util.ArrayList;
+import java.lang.CharSequence;
 
 /**
  * Base version of the 2015 Chatbot class. Only stub methods are provided. Students will complete methods as part
@@ -109,11 +110,14 @@ public class ChatModel
 	{
 		boolean hasPoliticalTopic = false;
 		
-			if(politicalTopicList.contains(currentInput))
+		for(int politicalCount = 0; politicalCount < politicalTopicList.size(); politicalCount++)
+		{
+			if(currentInput.toLowerCase().contains(politicalTopicList.get(politicalCount).toLowerCase()))
 			{
 				hasPoliticalTopic = true;
 			}
 		
+		}
 		
 		return hasPoliticalTopic;
 	}
@@ -156,6 +160,10 @@ public class ChatModel
 				if(politicalTopicChecker(currentInput))
 				{
 					nextConversation = "Trump is an interesting candidate, and so is Hillary Clinton....  But I'm not human, so I can't vote.";
+				}
+				else
+				{
+					nextConversation = "No Politics?";
 				}
 				break;
 			case 2:
