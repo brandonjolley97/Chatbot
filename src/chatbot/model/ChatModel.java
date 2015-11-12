@@ -92,7 +92,7 @@ public class ChatModel
 	public boolean contentChecker(String currentInput)
 	{
 		boolean hasContent = false;
-		if(currentInput.contains(content))
+		if(currentInput.toLowerCase().contains(content))
 		{
 			hasContent = true;
 		}
