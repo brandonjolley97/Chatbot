@@ -1,6 +1,7 @@
 package chatbot.controller;
 
 import chatbot.view.ChatView;
+import chatbot.view.ChatbotFrame;
 import chatbot.model.ChatModel;
 /**
  * Application Controller for the Chatbot Project
@@ -11,11 +12,13 @@ import chatbot.model.ChatModel;
 public class ChatController
 {
 	private ChatView display;
+	private ChatbotFrame baseFrame;
 	private ChatModel simpleBot;
 	
 	public ChatController()
 	{
 		display = new ChatView();
+		baseFrame = new ChatbotFrame(this);
 		String user = display.grabInput("What is your name?");
 		simpleBot =  new ChatModel(user);
 	}
@@ -35,11 +38,22 @@ public class ChatController
 			nextConversation = simpleBot.processConversation(nextConversation);
 			nextConversation = display.grabInput(nextConversation);
 		}
+	
 	}
 	
+	public ChatView getChatView()
+	{
+		return display;
+	}
 	
+	public ChatModel getChatModel()
+	{
+		return simpleBot;
+	}
 	
-	
-	
+	public ChatbotFrame getChatbotFrame()
+	{
+		return baseFrame;
+	}
 	
 }
