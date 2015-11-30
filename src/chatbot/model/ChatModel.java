@@ -100,6 +100,30 @@ public class ChatModel
 		return hasContent;
 	}
 	
+	public boolean keyboardMashChecker(String currentInput)
+	{
+		boolean mashTyping = false;
+		
+		if(currentInput.equals("sdf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals("./;"))
+		{
+			mashTyping = true;
+		}
+		
+		return mashTyping;
+	}
+	
+	public boolean quitChecker(String currentInput)
+	{
+		boolean didQuit = false;
+		
+		if(currentInput.equals("quit"))
+		{
+			didQuit = true;
+		}
+		
+		return didQuit;
+	}
+	
 	/**
 	 * Checks if supplied String matches ANY of the topics in the politicalTopicsList. Returns
 	 * true if it does find a match and false if it does not match.
