@@ -18,9 +18,9 @@ public class ChatController
 	public ChatController()
 	{
 		display = new ChatView();
-		baseFrame = new ChatbotFrame(this);
 		String user = display.grabInput("What is your name?");
 		simpleBot =  new ChatModel(user);
+		baseFrame = new ChatbotFrame(this);
 	}
 	
 	
