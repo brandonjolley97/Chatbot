@@ -1,9 +1,12 @@
 package chatbot.controller;
 
 import chatbot.view.ChatView;
-  
 import chatbot.view.ChatbotFrame;
 import chatbot.model.ChatModel;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 /**
  * Application Controller for the Chatbot Project
  * @author bjol7457
@@ -42,9 +45,23 @@ public class ChatController
 	
 	}
 	
+	public String userToChatbot(String nextConversation)
+	{
+		String response = "";
+		
+		if(simpleBot.quitChecker(nextConversation))
+		{
+			shutDown();
+		}
+		
+		response = simpleBot.processConversation(nextConversation);
+		
+		return response;
+	}
+	
 	private void shutDown()
 	{
-		display.displayText("Goodbye, " + simpleBot.getUserName() + " it has been my pleasure to talk with you!");
+		display.showResponse("Goodbye, " + simpleBot.getUserName() + " it has been my pleasure to talk with you!");
 		System.exit(0);
 	}
 	

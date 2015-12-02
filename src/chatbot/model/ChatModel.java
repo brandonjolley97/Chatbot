@@ -15,6 +15,7 @@ public class ChatModel
 	private ArrayList<String> politicalTopicList;
 	private String userName;
 	private String content;
+	private int topic;
 	
 	/**
 	 * Creates an instance of the Chatbot with the supplied username.
@@ -26,6 +27,7 @@ public class ChatModel
 		this.politicalTopicList = new ArrayList<String>();
 		this.userName = userName;
 		this.content = "Mexican";
+		topic = 0;
 		
 		buildMemesList();
 		buildPoliticalTopicsList();
@@ -93,6 +95,7 @@ public class ChatModel
 	public boolean contentChecker(String currentInput)
 	{
 		boolean hasContent = false;
+		
 		if(currentInput.toLowerCase().contains(content))
 		{
 			hasContent = true;
@@ -172,7 +175,12 @@ public class ChatModel
 		String nextConversation = "";
 		int randomTopic = (int) (Math.random() * 5); //Generates a random number between 0 and 4.  The *5 gives it a range.
 		
-		switch (randomTopic)
+		if(keyboardMashChecker(currentInput))
+		{
+			return "stop mashing the keyboard!!!";
+		}
+		
+		switch (topic)
 		{
 			case 0:
 				if(memeChecker(currentInput))
@@ -207,10 +215,11 @@ public class ChatModel
 				break;
 			default:
 				nextConversation = "The universe just collapsed.....";
+				topic = 0;
 				break;
 		}			
 		
-		
+		topic++;
 		return nextConversation;
 	}
 	/**
