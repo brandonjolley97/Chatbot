@@ -1,7 +1,8 @@
 package chatbot.model;
 
 import java.util.ArrayList;
-import java.lang.CharSequence;
+
+
 
 /**
  * Base version of the 2015 Chatbot class. Only stub methods are provided. Students will complete methods as part
@@ -36,9 +37,17 @@ public class ChatModel
 	
 	private void buildMemesList()
 	{
-		this.memesList.add("Doge");
+		
+		this.memesList.add("doge");
 		this.memesList.add("Y U NO!");
 		this.memesList.add("Bad luck Brian");
+		this.memesList.add("cute animals");
+		this.memesList.add("hashtag");
+		this.memesList.add("deez");
+		this.memesList.add("Do it!");
+		this.memesList.add("U Mad Bro");
+		this.memesList.add("Shia Lebouf");
+		this.memesList.add("John Cena!");
 		
 	}
 	
@@ -52,9 +61,9 @@ public class ChatModel
 		this.politicalTopicList.add("Fiorina");
 		this.politicalTopicList.add("Sanders");
 		this.politicalTopicList.add("vote");
-		this.politicalTopicList.add("11/8/2016");
-		this.politicalTopicList.add("democrat");
-		this.politicalTopicList.add("republican");
+		this.politicalTopicList.add("11/4/16");
+		this.politicalTopicList.add("Democrat");
+		this.politicalTopicList.add("Republican");
 		this.politicalTopicList.add("liberal");
 		this.politicalTopicList.add("conservative");
 		this.politicalTopicList.add("election");
@@ -72,7 +81,7 @@ public class ChatModel
 		
 		if(currentInput != null)
 		{
-			if(currentInput.length() != 1)
+			if(currentInput.length() >= 1)
 			{
 				hasLength = true;
 			}
@@ -107,7 +116,7 @@ public class ChatModel
 	{
 		boolean mashTyping = false;
 		
-		if(currentInput.equals("sdf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals("./;"))
+		if(currentInput.equals("sdf") || currentInput.equals("dfg") || currentInput.equals("cvb") || currentInput.equals(",./"))
 		{
 			mashTyping = true;
 		}
@@ -173,7 +182,6 @@ public class ChatModel
 	public String processConversation(String currentInput)
 	{
 		String nextConversation = "";
-		int randomTopic = (int) (Math.random() * 5); //Generates a random number between 0 and 4.  The *5 gives it a range.
 		
 		if(keyboardMashChecker(currentInput))
 		{

@@ -14,6 +14,8 @@ import chatbot.controller.ChatController;
 
 public class ChatbotPanel extends JPanel
 {
+	
+	//declaring variables
 	private ChatController baseController;
 	private SpringLayout baseLayout;
 	private JButton submitButton;
@@ -24,12 +26,13 @@ public class ChatbotPanel extends JPanel
 	
 	public ChatbotPanel(ChatController baseController)
 	{
+		//giving value to the variables
 		this.baseController = baseController;
 		
 		baseLayout = new SpringLayout();
 		submitButton = new JButton("Please don't click me!");
 		typingField = new JTextField(30);
-		promptLabel = new JLabel("Chat with me");
+		promptLabel = new JLabel("I am not a robot!");
 		chatArea = new JTextArea(10,30);
 		
 		setupPanel();
@@ -38,33 +41,39 @@ public class ChatbotPanel extends JPanel
 		changeRandomColor();
 	}
 	
+	//dumping area for all the code generated from the design editor
 	public void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.NORTH, chatArea, 23, SpringLayout.SOUTH, promptLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, chatArea, 40, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, typingField, 38, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, typingField, -6, SpringLayout.NORTH, submitButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, typingField, 23, SpringLayout.SOUTH, chatArea);
+		baseLayout.putConstraint(SpringLayout.WEST, typingField, 0, SpringLayout.WEST, chatArea);
+		baseLayout.putConstraint(SpringLayout.EAST, typingField, 0, SpringLayout.EAST, chatArea);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatArea, -102, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, chatArea, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatArea, -75, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, submitButton, 87, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, submitButton, -10, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, submitButton, -132, SpringLayout.EAST, this);
 	}
 	
+	//initializes all components into the panel
 	public void setupPanel()
 	{
 		this.setLayout(baseLayout);
-		this.setBackground(Color.MAGENTA);
+		this.setBackground(Color.GREEN);
 		this.add(chatArea);
 		this.add(typingField);
 		this.add(submitButton);
 		this.add(promptLabel);
-		typingField.setToolTipText("Type here for the chatbot.");
-		chatArea.setEnabled(false);
+		typingField.setToolTipText("Type here for the chatbot."); //prompt for the typing field
+		chatArea.setEnabled(false); //disables typing and other alterations to the chat area
 	}
+	
 	
 	public void changeRandomColor()
 	{
 		
 	}
 	
+	//setup various components to react to user input
 	public void setupListeners()
 	{
 		submitButton.addActionListener(new ActionListener()
@@ -80,6 +89,7 @@ public class ChatbotPanel extends JPanel
 		});
 	}
 	
+	//getter for typing field
 	public JTextField getJTextField()
 	{
 		return typingField;

@@ -1,12 +1,10 @@
 package chatbot.controller;
 
 import chatbot.view.ChatView;
+
 import chatbot.view.ChatbotFrame;
 import chatbot.model.ChatModel;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
 /**
  * Application Controller for the Chatbot Project
  * @author bjol7457
@@ -31,7 +29,7 @@ public class ChatController
 	public void start()
 	{
 		display.showResponse("Hello " + simpleBot.getUserName());
-		chat();
+		//chat();
 	}
 	
 	public void chat()
