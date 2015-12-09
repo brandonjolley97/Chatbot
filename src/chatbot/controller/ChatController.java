@@ -14,10 +14,12 @@ import chatbot.model.ChatModel;
 
 public class ChatController
 {
+	//declaring variables
 	private ChatView display;
 	private ChatbotFrame baseFrame;
 	private ChatModel simpleBot;
 	
+	//assigning values to variables
 	public ChatController()
 	{
 		display = new ChatView();
@@ -26,13 +28,14 @@ public class ChatController
 		baseFrame = new ChatbotFrame(this);
 	}
 	
-	
+	//start method which initializes conversation with user after user inputs name
 	public void start()
 	{
 		display.showResponse("Hello " + simpleBot.getUserName());
 		//chat();
 	}
 	
+	//prompts response from user to check for conversation topics in array lists
 	public void chat()
 	{
 		String nextConversation = display.grabInput("What would you like to talk about today?");
@@ -44,6 +47,7 @@ public class ChatController
 	
 	}
 	
+	//boolean quitChecker to see if the program quits.  if it does, it calls the shutDown method
 	public String userToChatbot(String nextConversation)
 	{
 		String response = "";
@@ -58,22 +62,26 @@ public class ChatController
 		return response;
 	}
 	
+	//displays a message if program quits
 	private void shutDown()
 	{
 		display.showResponse("Goodbye, " + simpleBot.getUserName() + " it has been my pleasure to talk with you!");
 		System.exit(0);
 	}
 	
+	//getter for chatView
 	public ChatView getChatView()
 	{
 		return display;
 	}
 	
+	//getter for chatModel
 	public ChatModel getChatModel()
 	{
 		return simpleBot;
 	}
 	
+	//getter for baseFrame
 	public ChatbotFrame getBaseFrame()
 	{
 		return baseFrame;

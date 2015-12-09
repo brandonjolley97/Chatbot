@@ -7,9 +7,11 @@ import javax.swing.JFrame;
 
 public class ChatbotFrame extends JFrame
 {
+	//declaring variables
 	private ChatController baseController;
 	private ChatbotPanel basePanel;
 	
+	//giving value to the variables
 	public ChatbotFrame(ChatController baseController)
 	{
 		this.baseController = baseController;
@@ -27,6 +29,7 @@ public class ChatbotFrame extends JFrame
 		this.setVisible(true);           //Must be the last line of the setupFrame!
 	}
 	
+	//getter for baseController
 	public ChatController getBaseController()
 	{
 		return baseController;

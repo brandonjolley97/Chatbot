@@ -11,17 +11,20 @@ import javax.swing.ImageIcon;
 
 public class ChatView
 {
+	//declaring variables
 	private String windowMessage;
 	private ImageIcon chatIcon;
 	
 	public ChatView()
 	{
+		//assigning values to variables
 		windowMessage = "I am definitely not a robot! Hello!";
 		chatIcon = new ImageIcon(getClass().getResource("images/porky.png"));
 		
 		
 	}
 	
+	//creates a popup for the user to input text
 	public String grabInput(String displayText)
 	{
 		String returnText = "";
@@ -29,6 +32,7 @@ public class ChatView
 		return returnText;
 	}
 	
+	//generates a popup to respond to user input
 	public void showResponse(String otherChatWords)
 	{
 		JOptionPane.showMessageDialog(null, otherChatWords);

@@ -35,6 +35,7 @@ public class ChatModel
 		
 	}
 	
+	//builds an array list of meme topics
 	private void buildMemesList()
 	{
 		
@@ -51,6 +52,7 @@ public class ChatModel
 		
 	}
 	
+	//builds an array list of political topics
 	private void buildPoliticalTopicsList()
 	{
 		this.politicalTopicList.add("Trump");
@@ -178,7 +180,7 @@ public class ChatModel
 		return hasMeme;
 	}
 	
-	
+	//checks for keywords in various array lists in order to return conversation
 	public String processConversation(String currentInput)
 	{
 		String nextConversation = "";
@@ -276,16 +278,19 @@ public class ChatModel
 		this.content = content;
 	}
 	
+	//updates the memesList for this Chatbot instance
 	public void setMemesList(ArrayList <String> memesList)
 	{
 		this.memesList = memesList;
 	}
 	
+	//updates the politicalTopicList for this Chatbot instance
 	public void setPoliticalTopicList(ArrayList <String> politicalTopicList)
 	{
 		this.politicalTopicList = politicalTopicList;
 	}
 	
+	//updates the userName for this Chatbot instance
 	public void setUserName(String userName)
 	{
 		this.userName = userName;
