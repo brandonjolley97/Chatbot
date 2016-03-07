@@ -105,6 +105,15 @@ public class ChatbotPanel extends JPanel
 					typingField.setText(""); 
 					String response = baseController.userToChatbot(userText); //Send the text to chatbot. Chatbot will process.
 					chatArea.append("\nChatbot: " + response); //Display the response.
+					
+			}
+		});
+		
+		tweetButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				baseController.sendTweet("no text to send");
 			}
 		});
 	}

@@ -22,6 +22,8 @@ public class ChatView
 		
 	}
 	
+	
+	
 	public String grabInput(String displayText)
 	{
 		String returnText = "";
