@@ -13,11 +13,8 @@ import chatbot.model.ChatModel;
 
 public class ChatController
 {
-<<<<<<< HEAD
-	//declaring variables
-=======
+
 	private CTECTwitter chatTwitter;
->>>>>>> updatedGUI
 	private ChatView display;
 	private ChatbotFrame baseFrame;
 	private ChatModel simpleBot;
