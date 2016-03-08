@@ -1,6 +1,7 @@
 package chatbot.view;
 
 import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -22,6 +23,10 @@ public class ChatbotPanel extends JPanel
 	private JTextField typingField;
 	private JLabel promptLabel;
 	private JTextArea chatArea;
+	private JScrollPane textPane;
+	private JButton saveButton;
+	private JButton tweetButton;
+	private JButton loadButton;
 	
 	
 	public ChatbotPanel(ChatController baseController)
@@ -35,23 +40,38 @@ public class ChatbotPanel extends JPanel
 		promptLabel = new JLabel("I am not a robot!");
 		chatArea = new JTextArea(10,30);
 		
+		setupChatPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
 		changeRandomColor();
 	}
 	
+	private void setupChatPane()
+	{
+		chatArea.setLineWrap(true);
+		chatArea.setWrapStyleWord(true);
+		chatArea.setEditable(false);
+		textPane = new JScrollPane(chatArea);
+		textPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		textPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+	}
+	
 	//dumping area for all the code generated from the design editor
 	public void setupLayout()
 	{
+		baseLayout.putConstraint(SpringLayout.WEST, submitButton, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, submitButton, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, textPane, 20, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, textPane, 100, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, textPane, 250, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, textPane, -20, SpringLayout.EAST, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, typingField, 23, SpringLayout.SOUTH, chatArea);
 		baseLayout.putConstraint(SpringLayout.WEST, typingField, 0, SpringLayout.WEST, chatArea);
 		baseLayout.putConstraint(SpringLayout.EAST, typingField, 0, SpringLayout.EAST, chatArea);
 		baseLayout.putConstraint(SpringLayout.SOUTH, chatArea, -102, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatArea, 10, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, chatArea, -75, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, submitButton, 87, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, submitButton, -10, SpringLayout.SOUTH, this);
 	}
 	
 	//initializes all components into the panel
@@ -59,7 +79,7 @@ public class ChatbotPanel extends JPanel
 	{
 		this.setLayout(baseLayout);
 		this.setBackground(Color.GREEN);
-		this.add(chatArea);
+		this.add(textPane);
 		this.add(typingField);
 		this.add(submitButton);
 		this.add(promptLabel);
@@ -85,6 +105,15 @@ public class ChatbotPanel extends JPanel
 					typingField.setText(""); 
 					String response = baseController.userToChatbot(userText); //Send the text to chatbot. Chatbot will process.
 					chatArea.append("\nChatbot: " + response); //Display the response.
+					
+			}
+		});
+		
+		tweetButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				baseController.sendTweet("no text to send");
 			}
 		});
 	}

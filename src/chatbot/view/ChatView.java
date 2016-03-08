@@ -24,7 +24,9 @@ public class ChatView
 		
 	}
 	
+
 	//creates a popup for the user to input text
+
 	public String grabInput(String displayText)
 	{
 		String returnText = "";
