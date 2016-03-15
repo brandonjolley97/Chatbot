@@ -44,4 +44,32 @@ public class CTECTwitter
 		String top = "top";
 		return top;
 	}
+	
+	private String removePunctuation(String currentString)
+	{
+		String punctuation = ".,'?!;:\"(){}^[]<>-";
+		
+		String scrubbedString = "";
+		
+		for(int i = 0; i < currentString.length(); i++)
+		{
+			if(punctuation.indexOf(currentString.charAt(i)) == -1)
+			{
+				scrubbedString += currentString.charAt(i);
+			}
+		}
+		
+		return scrubbedString;
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
