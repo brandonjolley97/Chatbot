@@ -33,7 +33,7 @@ public class ChatController
 	public void start()
 	{
 		display.showResponse("Hello " + simpleBot.getUserName());
-		chat();
+		//chat();
 	}
 	
 	//prompts response from user to check for conversation topics in array lists
@@ -46,6 +46,13 @@ public class ChatController
 			nextConversation = display.grabInput(nextConversation);
 		}
 	
+	}
+	
+	public String analyze(String topic)
+	{
+		String topic = "";
+		
+		return topic;
 	}
 	
 	//boolean quitChecker to see if the program quits.  if it does, it calls the shutDown method
