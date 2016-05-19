@@ -134,7 +134,7 @@ public class ChatbotPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				baseController.sendTweet("no text to send");
+				baseController.sendTweet(typingField.getText());
 			}
 		});
 		

@@ -23,8 +23,8 @@ public class ChatController
 	public ChatController()
 	{
 		display = new ChatView();
-		String user = display.grabInput("What is your name?");
-		simpleBot =  new ChatModel(user);
+		//String user = display.grabInput("What is your name?");
+		simpleBot =  new ChatModel("");
 		baseFrame = new ChatbotFrame(this);
 		chatTwitter = new CTECTwitter(this);
 	}
@@ -50,7 +50,7 @@ public class ChatController
 	
 	public String analyze(String topic)
 	{
-		String topic = "";
+		//String topic = "";
 		
 		return topic;
 	}
